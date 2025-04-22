@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import {AvailableTaskStatuses, TaskStatusEnum} from "../utils/constants.js"
 
 const taskSchema = new Schema({
     title:{
@@ -31,6 +32,27 @@ const taskSchema = new Schema({
         ref: "User",
         required: true
     },
+
+    status:{
+        type: String,
+        enum: AvailableTaskStatuses,
+        default: TaskStatusEnum.TODO,
+
+    },
+
+    attachments:{
+        // files store in obj storage; azure bucket, cloudnary, imagekit
+        type: [
+            {
+                url: String,
+                mimetype: String,
+                size: Number
+            }
+
+        ],
+        default: []
+
+    }
 
     
 
