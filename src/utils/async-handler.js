@@ -5,3 +5,12 @@
 //     }
 // }
 // export {asyncHandler}
+
+
+// 
+
+function asyncHandler(requestHandler){
+    return function(){}
+
+}
+export {asyncHandler}

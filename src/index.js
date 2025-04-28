@@ -12,8 +12,7 @@ const PORT = process.env.PORT || 8000
 
 connectDB()
     .then(() => {
-        app.listen(PORT, () => console.log(`server is 
-        running on port: ${PORT}`))
+        app.listen(PORT, () => console.log(`server is running on port: ${PORT}`))
     })
     .catch((err) =>{
         console.error("monogdb connection error", err)
